@@ -1,0 +1,9 @@
+apply plugin: 'cpp-exe'
+
+cpp {
+	sourceSets {
+		main {
+			source.srcDirs = ['src']
+		}
+	}
+}
