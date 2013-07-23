@@ -1,0 +1,22 @@
+project(":src/main") {
+	apply plugin: "cpp-lib"
+	
+	cpp {
+		sourceSets {
+			main {
+				source.srcDirs = ['headers', 'cpp']
+			}
+		}
+	}
+}
+
+project(':src/test_binary') {
+	apply plugin: 'cpp-exe'
+	cpp {
+		sourceSets {
+			testBinary {
+				libs << project(':src/main').libraries.main
+			}
+		}
+	}
+}
