@@ -1,1 +1,1 @@
-include "src/main", "src/test_binary"
+include "print_helper", "test_binary"

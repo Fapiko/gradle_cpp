@@ -1,21 +1,13 @@
-project(":src/main") {
+project(":print_helper") {
 	apply plugin: "cpp-lib"
-	
-	cpp {
-		sourceSets {
-			main {
-				source.srcDirs = ['headers', 'cpp']
-			}
-		}
-	}
 }
 
-project(':src/test_binary') {
+project(':test_binary') {
 	apply plugin: 'cpp-exe'
 	cpp {
 		sourceSets {
-			testBinary {
-				libs << project(':src/main').libraries.main
+			main {
+				libs << project(':print_helper').libraries.main
 			}
 		}
 	}
